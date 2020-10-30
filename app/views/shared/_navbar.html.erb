@@ -1,8 +1,9 @@
 <nav> 
     <% if user_signed_in? %>
-    <span class="nav-greeting"> <%="Welcome back, #{current_user.id}"%></span>
+    <span class="nav-greeting"> <%="Welcome back, #{current_user.username}"%></span>
 
     <% p "HELLO PAY ATTENTION"%>
+    <% p current_user[:id] %>
     <%= link_to "Sign Out", :destroy_user_session, method: "delete" %>
     <% else %>
         <%= link_to "Sign In", :new_user_session%>        
